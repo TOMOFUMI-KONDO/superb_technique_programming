@@ -1,1 +1,1 @@
-n = 1; eval s=%q(puts %(n = #{ n+1 }; eval s=%q(#{ s })))
+eval s=%q(n=1; puts %(eval s=%q(#{ s.gsub(/n=(\d+)/, "n=#{ n+1 }") })))
